@@ -1,0 +1,24 @@
+A simple and sample application that should be used for tutorial reasons on Ruby on Rails 3.0.
+
+Functionality:
+
+* A posting board
+* User should sign up and then sign in, otherwise he cannot post
+* All posts are public
+* A user can delete his own posts only
+* One can view the posts of a particular user
+* There is also an RSS Feed that one can subscribe to
+
+Demonstrates:
+
+* How you can do authentication
+* How you can have a sign up form
+* How you can have a sign in form
+* How you can carry out AJAX calls
+* How RSS Feed can be generated
+
+Testing:
+
+* You can see how models are tested both at DB and Model level
+* You can see how controllers are tested too.
+* Inside the controllers, we are trying to test some parts of the view logic too.

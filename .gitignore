@@ -1,0 +1,7 @@
+/*.iml
+/*.log
+/.idea
+/log
+/tmp
+.rvmrc
+routes.txt

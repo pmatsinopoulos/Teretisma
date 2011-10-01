@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= UserPostsSettings.application_name %></title>
+
+  <%= stylesheet_link_tag :all %>
+
+  <%= javascript_include_tag :defaults %>
+  <%= yield :javascript_includes %>
+
+  <%= auto_discovery_link_tag %>
+
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+<div id="menu">
+    <%= content_tag :div, (link_to "Sign Up", new_user_path), :class => "menu_item" %>
+    <%= content_tag :div, (link_to "Sign In", login_path), :class => "menu_item" unless current_user %>
+    <%= content_tag :div, (link_to "Registered Users", users_path), :class => "menu_item" %>
+    <%= content_tag :div, (link_to "Post", new_user_post_path(current_user)), :class => "menu_item" if current_user %>
+    <%= content_tag :div, (link_to "All Posts", root_path), :class => "menu_item" %>
+    <%= content_tag :div, (link_to "My Posts", user_posts_path(current_user)), :class => "menu_item" if current_user %>
+    <%= content_tag :div, (link_to "Subscribe to RSS Feeds", posts_path(:format => :rss)), :class => "menu_item" %>
+</div>
+
+<div id="flash">
+    <% flash.each do |type, message| -%>
+      <% type = :error if type == :alert %>
+      <div class="message <%= type %> closable">
+        <p><%= message %></p>
+      </div>
+    <% end -%>
+</div>
+
+<%= yield %>
+
+<div id="logged_in_user">
+    <%= render :partial => "layouts/logged_in_user" %>
+</div>
+
+<div id="footer">
+
+</div>
+
+</body>
+</html>

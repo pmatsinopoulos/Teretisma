@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <title>User Posts from Fantastic User Posts Site</title>
+    <link><%= posts_url %></link>
+    <description>A blog about everything and anyone</description>
+    <% @posts.each do |post| %>
+      <item>
+          <title><%= post.title %></title>
+          <full_name><%= post.full_name %></full_name>
+          <created_at><%= post.created_at.to_s %></created_at>
+          <link><%= user_post_url(:user_id => post.user.to_param, :id => post.to_param) %></link>
+      </item>
+    <% end unless @posts.nil? %>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<h1>Sign Up</h1>
+
+<%= error_messages_for :user, :id => 'error_explanation', :class => 'error_explanation' %>
+
+<%= form_for @user do |f|%>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name %>
+
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+
+    <%= f.submit %>
+<% end %>

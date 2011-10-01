@@ -1,0 +1,20 @@
+<h1>List of Users:</h1>
+<table>
+    <tr><th>Index</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th></th>
+    </tr>
+
+    <% record_counter = 0 %>
+    <% @users.each do |u| %>
+        <% record_counter += 1 %>
+        <tr><td><%= record_counter %></td>
+            <td><%= u.id  %></td>
+            <td><%= u.full_name %></td>
+            <td><%= u.phone %></td>
+            <td><%= link_to "Posts", user_posts_path(u) %></td>
+        </tr>
+    <% end if @users.present?  %>
+</table>

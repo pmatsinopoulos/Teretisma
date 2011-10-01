@@ -1,0 +1,2 @@
+<%= "Logged in as: " + current_user.username if current_user %><br/>
+<%= link_to "Logout", logout_path, :method => :delete if current_user %>

@@ -1,0 +1,35 @@
+<% content_for :javascript_includes do %>
+  <%= javascript_include_tag "posts" %>
+<% end %>
+
+<h1>Posts</h1>
+<%= link_to "Check for posts", posts_more_posts_path(:count => @posts.length), :id => "check_for_posts", :remote => true, 'data-type' => "text/html" %>
+
+<div id="more_posts_notification">
+</div>
+
+<div id="table_with_posts">
+    <table>
+        <tr>
+            <th>Index</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Date Published</th>
+            <th></th>
+        </tr>
+        <% index_position = 0 %>
+        <% @posts.each do |p| %>
+
+          <% index_position += 1 %>
+          <tr>
+              <td><%= index_position %></td>
+              <td><%= p.id %></td>
+              <td><%= p.user.full_name %></td>
+              <td><%= p.title %></td>
+              <td><%= p.created_at.to_s %></td>
+              <td><%= link_to "Delete", user_post_path(p.user, p), :method => :delete, :confirm => "Are you sure you wanna delete your post?" if current_user && current_user.id == p.user.id %></td>
+          </tr>
+        <% end if @posts.present? %>
+    </table>
+</div>

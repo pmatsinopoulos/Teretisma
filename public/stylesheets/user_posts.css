@@ -1,0 +1,13 @@
+body
+{
+    font-family: Verdana, Arial;
+    font-size: 12pt;
+}
+
+#logged_in_user
+{
+    position: absolute;
+    top: 35px;
+    right: 0;
+    padding: 2px 2px;
+}

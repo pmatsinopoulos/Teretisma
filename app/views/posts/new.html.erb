@@ -1,0 +1,8 @@
+<h1>New Post</h1>
+<%= error_messages_for :post, :id => 'error_explanation', :class => 'error_explanation' %>
+
+<%= form_for [@post.user, @post] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.submit %>
+<% end %>
