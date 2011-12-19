@@ -17,8 +17,8 @@ gem 'foreigner'
 gem 'settingslogic'
 
 group :development, :test do
+  gem 'mocha', :require => false
   gem 'test-unit'
   gem 'ruby-debug19'
-  gem 'mocha', :require => false
 end
 
