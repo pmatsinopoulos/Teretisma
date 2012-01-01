@@ -39,7 +39,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "post create on success should direct to users index" do
-    user_to_create = users(:petros).clone
+    user_to_create = users(:petros).dup
     user_to_create.username = user_to_create.username.reverse
     user_to_create.phone = user_to_create.phone.reverse
     assert_difference "User.count", +1 do

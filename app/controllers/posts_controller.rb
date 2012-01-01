@@ -45,13 +45,14 @@ class PostsController < ApplicationController
   #
   # Gets all posts from all users
   def index_all
+    limit = params[:limit].present? ? params[:limit].to_i : nil
     respond_to do |format|
       format.html {
-        @posts = Post.index_all(params[:limit])
+        @posts = Post.index_all(limit)
         render :index
       }
       format.rss {
-        @posts = Post.feed_index_all(params[:limit])
+        @posts = Post.feed_index_all(limit)
         render :index, :layout => false
       }
     end
