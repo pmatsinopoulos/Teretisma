@@ -1,6 +1,7 @@
-A simple and sample application that should be used for tutorial reasons on Ruby on Rails 3.0.
+= What is Teretisma?
+A simple and sample application that should be used for tutorial reasons on Ruby on Rails 3.1.
 
-Functionality:
+= Functionality
 
 * A posting board
 * User should sign up and then sign in, otherwise he cannot post
@@ -9,7 +10,7 @@ Functionality:
 * One can view the posts of a particular user
 * There is also an RSS Feed that one can subscribe to
 
-Demonstrates:
+= Demonstrates
 
 * How you can do authentication
 * How you can have a sign up form
@@ -17,8 +18,32 @@ Demonstrates:
 * How you can carry out AJAX calls
 * How RSS Feed can be generated
 
-Testing:
+= Testing
 
 * You can see how models are tested both at DB and Model level
 * You can see how controllers are tested too.
 * Inside the controllers, we are trying to test some parts of the view logic too.
+
+= Requirements
+
+Before playing around with this application, you need to have installed the following software and
+corresponding versions:
+
+* rvm version: 1.8.0
+* ruby vesion: 1.9.3
+* gem version: 1.8.6
+* bundler version: 1.0.21
+* rake version: 0.9.2.2
+
+Use rvm to install ruby and create a gemset that will be used for this project.
+
+= Rails version
+
+Currently, the +master+ branch is for Rails 3.0. There is a branch that is specific to Rails 3.1. I will soon change the
+master to be 3.1 and forget the 3.0 for good. Sooner or later I will move the application to Rails 3.2 too.
+
+
+
+
+
+

@@ -25,8 +25,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "username has unique index in db" do
-    a_new_user = users(:petros).clone
-    a_new_user.phone = '123-456-789' # make sure phone is unique, but username is not
+    a_new_user = users(:petros).dup
+    a_new_user.phone = '123456789' # make sure phone is unique, but username is not
     assert_raises ActiveRecord::RecordNotUnique do
       begin
         a_new_user.save!(:validate => false)
@@ -88,7 +88,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "username is unique" do
-    user = users(:petros).clone
+    user = users(:petros).dup
     assert_invalid_attribute user, :username
   end
 

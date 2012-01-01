@@ -3,5 +3,6 @@
 /.idea
 /log
 /tmp
+/doc
 .rvmrc
 routes.txt

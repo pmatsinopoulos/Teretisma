@@ -265,7 +265,7 @@ class PostsControllerTest < ActionController::TestCase
     # assert
     assert_response :success
     assert_template :index, :format => :rss
-    assert_equal :rss, @controller.params[:format]
+    assert_equal "rss", @controller.params[:format]
     assert_equal "application/rss+xml", @controller.content_type
 
     assert_assigns(:posts)
@@ -295,7 +295,7 @@ class PostsControllerTest < ActionController::TestCase
     # assert
     assert_response :success
     assert_template :index, :format => :rss
-    assert_equal :rss, @controller.params[:format]
+    assert_equal "rss", @controller.params[:format]
     assert_equal "application/rss+xml", @controller.content_type
 
     assert_assigns(:posts)
